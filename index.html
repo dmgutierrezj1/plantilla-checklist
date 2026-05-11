@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Contratos Laborales - CAPITAL INVESTMENTS S.A.S. 2026</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📋 CHECKLIST VERIFICACIÓN CONTRATOS LABORALES</h1>
+        <p><strong>CAPITAL INVESTMENTS S.A.S.</strong> | Sucursal: <select id="sucursal"><option>Villavicencio HQ</option><option>Sucursal Meta 1</option><option>Sucursal Meta 2</option></select></p>
+        <p>Fecha: <input type="date" id="fechaChk"> | Nº Contrato: <input type="text" id="numContrato" size="12"> | Empleado: <input type="text" id="empleado" size="25"></p>
+        <div class="leyenda">
+            <strong>REQUIERE 100% SÍ (10/10)</strong> | Foto firmada → WhatsApp HQ | Ley 2466/2025 Actualizada
+        </div>
+    </header>
+    
+    <main>
+        <form id="checklistForm">
+            <table role="grid" aria-label="Checklist Laboral 10 Ítems">
+                <thead>
+                    <tr>
+                        <th width="5%">№</th>
+                        <th>ÍTEM (Normatividad Colombia)</th>
+                        <th width="12%">SÍ</th>
+                        <th width="12%">NO</th>
+                        <th width="33%">OBSERVACIONES/Corrección</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Cédula/NIT válido</strong> (CST Art.23 datos completos)</td>
+                        <td><label><input type="radio" name="chk1" value="si"></label></td>
+                        <td><label><input type="radio" name="chk1" value="no"></label></td>
+                        <td><input type="text" class="obs" placeholder="CC vigente, datos residencia"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Causal legal</strong> (Ley 50/1990 Art.46 indefinido prioritario)</td>
+                        <td><label><input type="radio" name="chk2" value="si"></label></td>
+                        <td><label><input type="radio" name="chk2" value="no"></label></td>
+                        <td><input type="text" class="obs" placeholder="Causal escrita explícita"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Contrato escrito</strong> (CST Art.45 obligatorio físico/digital)</td>
+                        <td><label><input type="radio" name="chk3" value="si"></label></td>
+                        <td><label><input type="radio" name="chk3" value="no"></label></td>
+                        <td><input type="text" class="obs" placeholder="Formato estándar empresa"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Afiliaciones día 1</strong> (Ley 100/1993 EPS/Pensión/ARL)</td>
+                        <td><label><input type="radio" name="chk4" value="si"></label></td>
+                        <td><label><input type="radio" name="chk4" value="no"></label></td>
+                        <td><input type="text" class="obs" placeholder="Comprobantes adjuntos"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Firma de ambas partes</strong> (+2 testigos CST Art.24)</td>
+                        <td><label><input type="radio" name="chk5" value="si"></label></td>
+                        <td><label><input type="radio" name="chk5" value="no"></label></td>
+                        <td><input type="text" class="obs" placeholder="Firmas originales legibles"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><strong>Registro PILA</strong> (Día 1 verificación RUAF/SISPRO)</td>
+                        <td><label><input type="radio" name="chk6" value="si"></label></td>
+                        <td><label><input type="radio" name="chk6" value="no"></label></td>
+                        <td><input type="text" class="obs" placeholder="Pantallazo PILA ok"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><strong>No simulación</strong> (CSJ SL-2014-2023 causal real)</td>
+                        <td><label><input type="radio" name="chk7" value="si"></label></td>
+                        <td><label><input type="radio" name="chk7" value="no"></label></td>
+                        <td><input type="text" class="obs" placeholder="No servicios ficticios"></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><strong>Beneficios mínimos</strong> (SMLMV $1.750.905+ cesantías/prima)</td>
+                        <td><label><input type="radio" name="chk8" value="si"></label></td>
+                        <td><label><input type="radio" name="chk8" value="no"></label></td>
+                        <td><input type="text" class="obs" placeholder="Prestaciones explícitas"></td>
+                    </tr>
+                    <tr style="background:#ffebee;">
+                        <td>9</td>
+                        <td><strong>Terminación clara</strong> <span style="color:#d32f2f;font-weight:bold;">(Ley 2466/2025: Preaviso 30d/Indem 15-45d + JC)</span></td>
+                        <td><label><input type="radio" name="chk9" value="si"></label></td>
+                        <td><label><input type="radio" name="chk9" value="no"></label></td>
+                        <td><input type="text" class="obs" placeholder="Preaviso ok, Indem Art.64 CST" required></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><strong>Copia al empleado</strong> (Entregada firmada CST Art.24)</td>
+                        <td><label><input type="radio" name="chk10" value="si"></label></td>
+                        <td><label><input type="radio" name="chk10" value="no"></label></td>
+                        <td><input type="text" class="obs" placeholder="Recibí recibo firmado"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="acciones">
+                <button onclick="calcularCumplimiento()">🔢 Calcular %</button>
+                <button onclick="generarPDFChecklist()">📄 PDF Oficial</button>
+                <button onclick="window.print()">🖨️ Imprimir</button>
+                <button onclick="resetChecklist()">🔄 Nuevo</button>
+            </div>
+
+            <div id="resultado" class="resultado"></div>
+        </form>
+
+        <section class="instrucciones">
+            <h2>📋 INSTRUCCIONES SUCURSALES</h2>
+            <ol>
+                <li><strong>Imprime</strong> 1 hoja/contrato (A4 landscape).</li>
+                <li>Marca <strong>SÍ/NO</strong> + Obs detalladas (foto legible).</li>
+                <li><strong>100% SÍ</strong> → Foto completa WhatsApp HQ (24h aprobación).</li>
+                <li>Cualquier <strong>NO</strong> → Corrige contrato antes firmar.</li>
+                <li>Auditoría mensual: Muestreo 20% contratos (Ley 2466/2025).</li>
+            </ol>
+        </section>
+    </main>
+    
+    <footer>
+        <p>RRHH CAPITAL INVESTMENTS S.A.S. | Villavicencio, Meta | Versión 2.0 Mayo 2026 | Ley 2466/2025 Compliant</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
